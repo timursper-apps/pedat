@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.testTypes{
+    display:flex;
+}
+
+.createTest{
+    background-color: rgb(255, 103, 103);
+    transition: 1s;
+}
+
+.createTest:hover{
+    background-color: rgb(185, 0, 0);
+    transition:1s;
+}
+
+.createTestForm{
+    background-color: rgb(255, 103, 103);
+    transition: 1s;
+}
+
+.createTestForm:hover{
+    background-color: rgb(185, 0, 0);
+    transition:1s;
+}
+
+.completeTest:hover{
+    background-color: rgb(0, 197, 16);
+    transition:1s;
+}
+
+.completeTest{
+    background-color:rgb(0, 117, 10);
+    transition: 1s;
+    margin-left:15px;
+}
+
+.createTest, .completeTest{
+    border: solid 2px black;
+    width:200px;
+}
+
+.createTestForm, .completeTestForm{
+    border: solid 2px black;
+    width:350px;
+}
+
+.completeTestForm:hover{
+    background-color: rgb(0, 197, 16);
+    transition:1s;
+}
+
+.completeTestForm{
+    background-color:rgb(0, 117, 10);
+    transition: 1s;
+}
