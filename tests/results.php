@@ -9,7 +9,7 @@
     }
 
     $sql->query("USE $db");
-    $res = $sql->query("SELECT * FROM testComplete");
+    $res = $sql->query("SELECT * FROM testComplete WHERE testName = '$testName'");
 
     $sql->close();
 

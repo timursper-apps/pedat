@@ -1,5 +1,5 @@
 <?php
     $host = "localhost";
     $user = "adminpedat";
-    $passw = 'pedat';
+    $passw = '';
     $db = "pedatsystem";
