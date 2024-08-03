@@ -12,10 +12,15 @@ $sql = new mysqli($host, $user, $passw);
 if ($sql->connect_error) {
     die("Connection failed: " . $sql->connect_error);
 }
-
 $sql->query("USE $db");
+
 $query = "CREATE TABLE IF NOT EXISTS `testComplete` ( `testName` TEXT, `userName` TEXT, `correctAnswers` INTEGER, `incorrectAnswers` INTEGER ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
 $sql->query($query);
+
+$userCompleted = $sql->query("SELECT * FROM `testComplete` WHERE userName = '$teacherName'");
+if ($userCompleted->num_rows > 0) {
+    die("Вы уже проходили данный тест!");
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
