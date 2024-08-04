@@ -25,4 +25,5 @@
         echo "Нет результатов";
     }
     $sql->close();
+    echo "<hr><p>$ver</p>";
 ?>

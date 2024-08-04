@@ -26,9 +26,13 @@
     <body>
         <h1>Создание теста <?php echo $testName ?></h1>
         <h2>Создание вопроса</h2>
+        <p>Если вы хотите перенести строку, то используйте \n. Пример:</p>
+        <p>Ж_, ш_ пиш_ с буквой _ \n</p>
+        <p>а) Ы \n</p>
+        <p>б) И</p>
         <form method="post">
-            <label for="testname">Название теста: <input name="testName" type='text' value=<?php echo $testName ?>></label>
-            <label for="question">Вопрос: <input name="question" type="text"></label><br>
+            <input name="testName" type='hidden' value=<?php echo $testName ?>>
+            <label for="question">Вопрос: <textarea name="question"></textarea></label><br>
             <label for="answer">Правильный ответ: <input name="answer" type="text"></label><br>
             <input type="submit" value="Добавить">
         </form>
@@ -38,7 +42,7 @@
             <input type="submit" value="Показать">
         </form>
         <p>Вы можете завершить создание в любой момент. Каждый вопрос автоматически сохраняется после нажатия на кнопку "Добавить"</p>
-        <a href='../index.html'><button>Завершить сессию</button></a><br>
+        <a href='create.php'><button>Завершить сессию</button></a><br>
     </body>
 </html>
 
@@ -56,5 +60,5 @@
             echo "<script>alert('Ошибка!\n$res->error');</script>";
         }
     } 
-    
+    echo "<hr><p>$ver</p>";
 ?>

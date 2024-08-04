@@ -31,19 +31,25 @@ if ($userCompleted->num_rows > 0) {
     <?php
         $res = $sql->query("SELECT question FROM $testName");
         $i = 0;
-
+        
         echo "<form action='result.php' method='POST'>";
-
+        
         while ($row = $res->fetch_assoc()) {
-            $questionText = $row['question'];
-            echo "<label class='completeTestForm'>$questionText<input type='text' name='answer$i'></label><br>";
+            $questionText = explode("\n", $row['question']);
+            echo "<label>";
+            foreach ($questionText as $line) {
+                echo $line . "<br>";
+            }
+            echo "Ответ: <input type='text' name='answer$i' required>"; // Добавляем атрибут required для проверки заполнения
+            echo "</label><br><hr>";
             $i++;
         }
-        echo "<input type='hidden' name='questions' value=$i>";
-        echo "<input type='hidden' name='testName' value='$testName'>";
-        echo "<input type='hidden' name='userName' value='$teacherName'>";
-        echo "<input type='submit'>";
+        echo "<input type='hidden' name='questionsCount' value='$i'>"; // Передача количества вопросов
+        echo "<input type='hidden' name='testName' value='$testName'>"; // Передача названия теста
+        echo "<input type='hidden' name='userName' value='$teacherName'>"; // Передача имени пользователя
+        echo "<input type='submit' value='Отправить'>";
         echo "</form>";
-    ?>
+        echo "<hr><p>$ver</p>";
+    ?> 
 </body>
 </html>

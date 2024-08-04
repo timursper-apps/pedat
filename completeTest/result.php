@@ -1,14 +1,12 @@
 <?php
 require "../config.php";
-echo "<meta charset='UTF-8'>";
-echo "<link rel='stylesheet' href='../style.css'>";
 
 // Получаем данные POST-запроса с проверкой на их наличие
 $testName = isset($_POST["testName"]) ? $_POST["testName"] : '';
-$questionsCount = isset($_POST["questions"]) ? (int)$_POST["questions"] : 0;
+$questionsCount = isset($_POST["questionsCount"]) ? (int)$_POST["questionsCount"] : 0;
 $userName = isset($_POST["userName"]) ? $_POST["userName"] : '';
 
-// Если нужные данные не получены, выдать ошибку или перенаправить на страницу теста
+// Если нужные данные не получены, выдаем ошибку
 if (empty($testName) || $questionsCount === 0 || empty($userName)) {
     die("Ошибка: Неполные данные.");
 }
@@ -29,7 +27,7 @@ for ($i = 0; $i < $questionsCount; $i++) {
     // Получаем ответ пользователя
     $userAnswer = isset($_POST["answer$i"]) ? trim($_POST["answer$i"]) : '';
 
-    // Получаем правильный ответ из базы данных
+    // Получаем правильный ответ из базы данныхquestions
     $query = "SELECT answer FROM $testName WHERE question = (SELECT question FROM $testName LIMIT 1 OFFSET $i)";
     $result = $sql->query($query);
     if ($result && $row = $result->fetch_assoc()) {
@@ -43,7 +41,7 @@ for ($i = 0; $i < $questionsCount; $i++) {
         }
     } else {
         // Обработка ошибки, если вопрос не найден
-        echo "Ошибка: вопрос с номером $i не найден.";
+        echo "Ошибка: вопрос с номером $i не найден.<br>";
     }
 }
 
@@ -65,6 +63,14 @@ $sql->close();
     <h1>Результаты теста</h1>
     <p>Правильных ответов: <?php echo $correctAnswers; ?></p>
     <p>Неправильных ответов: <?php echo $incorrectAnswers; ?></p>
-    <a href='../index.html'><button>На главную</button></a>
+    <hr>
+    <?php
+        $incorrectAnswersPerecent = ceil(intval($incorrectAnswers) / intval($questionsCount) * 100);
+    ?>
+    <p>Процент правильных ответов: <?php echo $incorrectAnswersPerecent;?>%</p>
+    <p>Процент неправильных ответов: <?php echo 100 - $incorrectAnswersPerecent?>%</p>
+    <?php
+        echo "<hr><p>$ver</p>";
+    ?>
 </body>
 </html>

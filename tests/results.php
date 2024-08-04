@@ -31,3 +31,4 @@
         echo "Никто ещё не прошел тестирование";
         echo "<a href='../index.html'><button>На главную</button></a>";
     }
+    echo "<hr><p>$ver</p>";
