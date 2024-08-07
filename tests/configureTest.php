@@ -26,10 +26,7 @@
     <body>
         <h1>Создание теста <?php echo $testName ?></h1>
         <h2>Создание вопроса</h2>
-        <p>Если вы хотите перенести строку, то используйте \n. Пример:</p>
-        <p>Ж_, ш_ пиш_ с буквой _ \n</p>
-        <p>а) Ы \n</p>
-        <p>б) И</p>
+        <a href='../img/hint.png' target="_blank" rel="noopener noreferrer"><button>Перенос текста</button></a>
         <form method="post">
             <input name="testName" type='hidden' value=<?php echo $testName ?>>
             <label for="question">Вопрос: <textarea name="question"></textarea></label><br>

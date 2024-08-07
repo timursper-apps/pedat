@@ -19,7 +19,7 @@
 
 <html>
     <head>
-        <title>АИС «ПА»</title>
+        <title>АИС «Тесты»</title>
     </head>
     <body>
         <h2>Создание теста</h2>

@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>АИС «Педагогическая Аттестация»</title>
+    <title>АИС «Тесты»</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>АИС «Педагогическая Аттестация»</h1>
+    <h1>АИС «Тесты»</h1>
     <section class="testTypes">
         <div class="createTest">
-            <h2>Создать тест</h2>
-            <a href="tests/create.php"><button>Перейти к инструменту создания</button></a>
+            <h2 align='right'>Я директор</h2>
+            <a href="fordirectors.php"><button>Перейти</button></a>
         </div><br>
         <div class="completeTest">
-            <h2>Пройти тест</h2>
-            <form action="completeTest/test.php" method="post">
-                <input type="text" name="name" placeholder="Ваше ФИО"><br>
-                <input type="text" name="testName" placeholder="Название теста"><br>
-                <input type="submit" value="Пройти">
-            </form>
+            <h2 align='right'>Я учитель</h2>
+            <a href='forteachers.php'><button>Перейти</button></a>
         </div>
     </section>
     <hr>
@@ -27,5 +23,7 @@
         include "config.php";
         echo "<p>$ver</p>";
     ?>
+    <hr>
+    <a href='https://isouop.site'><button>Сайт ИСО «УОП»</button></a>
 </body>
 </html>
