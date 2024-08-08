@@ -7,17 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>АИС «Тесты»</h1>
-    <section class="testTypes">
-        <div class="createTest">
-            <h2 align='right'>Я директор</h2>
-            <a href="fordirectors.php"><button>Перейти</button></a>
-        </div><br>
-        <div class="completeTest">
-            <h2 align='right'>Я учитель</h2>
-            <a href='forteachers.php'><button>Перейти</button></a>
-        </div>
-    </section>
+    <center>
+        <h1>АИС «Тесты»</h1>
+        <h2>Выберите модуль</h2>
+        <section class="testTypes">
+            <div class="createTest">
+                <h3 align='right'>Создать</h3>
+                <a href="fordirectors.php"><button>Перейти</button></a>
+            </div><br>
+            <div class="completeTest">
+                <h3 align='right'>Пройти</h3>
+                <a href='forteachers.php'><button>Перейти</button></a>
+            </div>
+            <div class='sendReport'>
+                <h3 align='right'>Жалоба</h3>
+                <a href='report.php'><button>Отправить</button></a>
+            </div>
+        </section>
+    </center>
     <hr>
     <?php
         include "config.php";

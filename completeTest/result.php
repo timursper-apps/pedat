@@ -18,6 +18,11 @@ if ($sql->connect_error) {
 }
 $sql->query("USE $db");
 
+$userCompleted = $sql->query("SELECT * FROM `testComplete` WHERE userName = '$teacherName' AND `testName` = '$testName'");
+if ($userCompleted->num_rows > 0) {
+    die("Вы уже проходили данный тест!");
+}
+
 // Переменные для подсчёта правильных и неправильных ответов
 $correctAnswers = 0;
 $incorrectAnswers = 0;

@@ -23,17 +23,15 @@
     </head>
     <body>
         <h2>Создание теста</h2>
+        <font color='red'>Внимание! Не говорите кодовое слово от теста испытуемым! По кодовому слову можно зайти в настройки теста.</font>
         <form method="post" action="configureTest.php" class="createTestForm">
             <label>Введите название теста на латинице без пробелов: <input type="text" name="testName"></label><br>
+            <label>Введите кодовое слово для входа: <input type="text" name="testAlias"></label><br>
             <input type="submit" value="Создать / Продолжить работу">
         </form>
         <hr>
-        <h2>Просмотр результатов теста</h2>
-        <form method='post' action='results.php' class="createTestForm">
-            <label>Введите название теста на латинице без пробелов: <input type="text" name="testName"></label><br>
-            <input type="submit" value="Просмотр результатов">
-        </form>
         <p>Если вы хотите продолжить создание теста, то также укажите название теста и нажмите на кнопку</p>
+        <a href='../fordirectors.php'><button>Завершить сессию</button></a>
         <?php
             echo "<hr><p>$ver</p>";
         ?>

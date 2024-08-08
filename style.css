@@ -9,6 +9,7 @@
 
 .testTypes{
     display:flex;
+    justify-content: center;
 }
 
 .createTest{
@@ -19,7 +20,6 @@
 .statsByTests{
     background: url("img/stats.png");
     transition: 1s;
-    color:black;
 }
 
 
@@ -27,6 +27,19 @@
     background: rgb(255, 80, 80);
     transition: 1s;
     color:white;
+    border-radius: 10px;
+    max-width:300px;
+    border: 2px solid black;
+}
+
+.questionsCheck{
+    background: rgb(58, 153, 0);
+    transition: 1s;
+    color:white;
+    border-radius: 10px;
+    max-width:300px;
+    border: 2px solid black;
+    margin-top:15px;
 }
 
 .completeTest{
@@ -34,7 +47,8 @@
     transition: 1s;
 }
 
-.createTest, .completeTest, .statsByTests{
+.createTest, .completeTest, .statsByTests, .sendReport{
+    transition:1s;
     border: solid 2px black;
     width:200px;
     height:140px;
@@ -42,11 +56,41 @@
     margin-right:15px;
 }
 
-input, button{
+.createTest:hover, .completeTest:hover, .statsByTests:hover, .sendReport:hover{
+    transform: scale(1.1);
+}
+
+input, button, textarea{
     border-radius:5px;
+    border: 2px solid black;
 }
 
 .createTestForm, .completeTestForm{
-    border: solid 2px black;
-    width:350px;
+    border: 2px solid black;
+    max-width:500px;
+}
+
+.reportForm{
+    width: 350px;
+}
+
+.reportFormInput{
+    width:200px;
+}
+.reportFormTarea{
+    width:200px;
+    resize: vertical;
+}
+
+.sendReport{
+    background: url("img/report.png");
+}
+
+.reportForm{
+    background: rgb(231, 255, 82);
+    color:black;
+    border-radius: 10px;
+    max-width:350px;
+    border: 2px solid black;
+    margin-top:15px;
 }
